@@ -13,6 +13,9 @@ Public Class frmIDSwop
     Private Delegate Sub UpdateUI(ByVal ReceivedData As String)
     Dim SFC004 As String
     Dim SFC009 As Integer
+    Dim a As String
+
+
 
     Private ReadOnly Property IsInputPanel As Boolean
         Get
