@@ -67,7 +67,7 @@ function loadVersion()
     var versionElement=document.getElementById('VERSION');
     var ApplicationVersion="{{ApplicationVersion}}";
     var ApplicationRevision="{{ApplicationRevision}}";
-     var version= ApplicationVersion.replace(/%2a/g, ApplicationRevision);
+    var version= ApplicationVersion.replace('*', ApplicationRevision);
      versionElement.innerText=version;
 }
 function HasRuntimeVersion(v, c)
