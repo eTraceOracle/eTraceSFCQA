@@ -17,8 +17,7 @@
     <SccProvider>SAK</SccProvider>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <ManifestCertificateThumbprint>863EF6CC4BC2A4851E9500E5A39D8D3C13B70F6D</ManifestCertificateThumbprint>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>SignName.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
     <ApplicationIcon>eTraceShopfloor.ico</ApplicationIcon>
@@ -515,10 +514,7 @@
             TargetFrameworkVersion="v4.5" />
   </Target>-->
   <Target Name="publish">
-    <SignFile
-            CertificateThumbprint="$(ManifestCertificateThumbprint)"
-            SigningTarget="$(ApplicationManifest)"
-            TargetFrameworkVersion="v4.5" />
+    <SignFile CertificateThumbprint="$(ManifestCertificateThumbprint)" SigningTarget="$(ApplicationManifest)" TargetFrameworkVersion="v4.5" />
   </Target>
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(ProjectDir)publish.htm" DestinationFiles="$(PublishDir)publish.htm" />
