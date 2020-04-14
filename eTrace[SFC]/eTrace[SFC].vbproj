@@ -89,7 +89,7 @@
     </Reference>
     <Reference Include="eTraceUI, Version=1.0.1.6, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Source\Workspaces\eTrace(Oracle)\eTrace[SFC]\eTraceUI.dll</HintPath>
+      <HintPath>..\eTraceUI.dll</HintPath>
     </Reference>
     <Reference Include="Interop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
