@@ -87,6 +87,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AxInterop.AcroPDFLib.dll</HintPath>
     </Reference>
+    <Reference Include="eTraceUI, Version=1.0.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Source\Workspaces\eTrace(Oracle)\eTrace[SFC]\eTraceUI.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Interop.AcroPDFLib.dll</HintPath>
@@ -496,10 +500,6 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\eTraceUI\eTraceUI.vbproj">
-      <Project>{fe3d3f2d-f209-4d76-bc07-b86052468478}</Project>
-      <Name>eTraceUI</Name>
-    </ProjectReference>
     <ProjectReference Include="..\eTrace[SFCFunction]\eTrace[SFCFunction].vbproj">
       <Project>{3c4861fd-2153-4623-a53d-76fd177cdd1c}</Project>
       <Name>eTrace[SFCFunction]</Name>
