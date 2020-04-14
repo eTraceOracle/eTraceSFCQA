@@ -1,0 +1,3278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService">
+      <s:element name="GetResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SCID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Process" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadTestData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TDSel" type="tns:TDSelectionStructure" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TDSelectionStructure">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="frProdDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="toProdDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Process" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReadTestDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadTestDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderInfoFromSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderInfoFromSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOrderInfoFromSAPResult" type="tns:OrderInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OrderInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MatlNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MatlDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderQty" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="OpenQty" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOrderInfoFromOracle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderInfoFromOracleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderInfoFromOracleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubAmount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubAmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSubAmountResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPoQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PCBA" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Qty" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPoQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPoQtyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTestResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StatusHeader" type="tns:StatusHeaderStructure" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsResultItem">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ProdLine" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StatusHeaderStructure">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PCBA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Process" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IntSerial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtSerial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperatorName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tester" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProgramName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProgramVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPSNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPSVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SalesOrder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustPN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustRev" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SN2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SN3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SN4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PalletID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveTestResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveTestResultResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SerialNoInUse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExtSerialNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SerialNoInUseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SerialNoInUseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddlDataInUse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="column" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddlDataInUseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddlDataInUseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModelDefined">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModelNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModelDefinedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModelDefinedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyCardInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="CopyCardInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CopyCardInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccessCardUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccessCardID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccessCardUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAccessCardUserInfoResult" type="tns:AccessCard" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccessCard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccessCardID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmplogeeID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dept" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReadSerialNoFromDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExtSerialNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSerialNoFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadSerialNoFromDBResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductRework">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="frSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toSerial" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bolDel" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductReworkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductReworkResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTestResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExtSerialNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTestResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteTestResultResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetModelInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetModelInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetModelInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ErrorLogging">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModuleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ErrorLoggingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ErrorLoggingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateIDSwop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BarcodeNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SCRNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateIDSwopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateIDSwopResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadProductInfoByCPN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CPN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadProductInfoByCPNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReadProductInfoByCPNResult" type="tns:ProductData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProductData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Desc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Customer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CPN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtSerialPattern" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SN2pattern" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SN3pattern" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SN4pattern" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MainBoard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpecialReq" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Boxsize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Palletsize" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Revision" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExtSNSameIntSN" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConfirmSN" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReadRuleFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReadRuleFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadRuleFromDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postProdMaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pordMaster" type="tns:RuleDetail" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProdStructure">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLoginData" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RuleDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Desc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Customer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CPN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SNpattern" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SN2pattern" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SN3pattern" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SN4pattern" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VoltageType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Power" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mainboard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpecialRequirement" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Boxsize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Palletsize" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Revision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExtSNSameIntSN" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConfirmSN" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SAPLogin">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Server" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="postProdMasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="postProdMasterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelProdMaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelProdMasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelProdMasterResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadRepairCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Site" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadRepairCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadRepairCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTDCRepairCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RepairCode">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTDCRepairCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveTDCRepairCodeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadRepairDataBySerialNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProdOrder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadRepairDataBySerialNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadRepairDataBySerialNoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBomFromSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PCB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBomFromSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBomFromSAPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpecifySeatItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PCB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpecifySeatItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSpecifySeatItemResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRepairData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RepData">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRepairDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveRepairDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MatchingNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PCBA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MatchingNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MatchingNoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SerialNoIsAccessCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SerialNoIsAccessCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SerialNoIsAccessCardResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MatchingAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Header" type="tns:StatusHeaderStructure" />
+            <s:element minOccurs="1" maxOccurs="1" name="Allow" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MatchingAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MatchingAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBoxQtyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBoxInfoResult" type="tns:BoxInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BoxInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerPN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BoxQty" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PalletID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PalletQty" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPalletInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PalletID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPalletInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPalletInfoResult" type="tns:BoxInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPalletQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PalletID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPalletQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPalletQtyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BoxExesistInPallet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PalletID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BoxExesistInPalletResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BoxExesistInPalletResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BoxInOtherPallet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PalletID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BoxInOtherPalletResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BoxInOtherPalletResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BoxHasOtherProd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CPN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BoxHasOtherProdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BoxHasOtherProdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSDCartons">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaleOrder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeliveryNote" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLoginData" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSDCartonsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadSDCartonsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadCartonID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScanData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Temp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLoginData" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadCartonIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadCartonIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveCartonID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaleOrder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeliveryNote" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myDataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLoginData" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveCartonIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveCartonIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCartonID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CartonID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLoginData" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCartonIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveCartonIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShipInfoBySN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShipInfoBySNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetShipInfoBySNResult" type="tns:ShipInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ShipInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerPN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PalletID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetShipInfoByBoxID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShipInfoByBoxIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetShipInfoByBoxIDResult" type="tns:ShipInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeBoxResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFlatFileMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="boxid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="palletid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="flatfile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sentby" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFlatFileMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveFlatFileMessageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveFlatFileSN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FlatfileDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="parmsArray" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="saveFlatFileSNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="saveFlatFileSNResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckFlatFileSN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FlatfileDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckFlatFileSNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckFlatFileSNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePallet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PalletID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePalletResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePalletResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlatfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PalletID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlatfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlatfileResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFlatFileProperties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attribute" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getFlatFilePropertiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFlatFilePropertiesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setFlatFileProperties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attribute" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setFlatFilePropertiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setFlatFilePropertiesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonInput">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Station" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonInputResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AndonInputResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistsModel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistsModelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExistsModelResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonActualQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonActualQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AndonActualQtyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonActualQtyofProcess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="process" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonActualQtyofProcessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AndonActualQtyofProcessResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonFailedPercent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonFailedPercentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AndonFailedPercentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonFailedQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonFailedQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AndonFailedQtyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonLineStopTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonLineStopTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AndonLineStopTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonLineStopFreq">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Line" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonLineStopFreqResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AndonLineStopFreqResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAndonProdSche">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Line" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAndonProdScheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAndonProdScheResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAndonProdSche">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="Line" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAndonProdScheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateAndonProdScheResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonProjectedQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Line" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AndonProjectedQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AndonProjectedQtyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KillLargeReports">
+        <s:complexType />
+      </s:element>
+      <s:element name="KillLargeReportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KillLargeReportsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimeToGMT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimeToGMTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TimeToGMTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintMacAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="macType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="addressTotal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="printerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintMacAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintMacAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReprintMacAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="macType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="printerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReprintMacAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReprintMacAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreMacAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddressType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreMacAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPreMacAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLengthMacAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLengthMacAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLengthMacAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenPrintLabels">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="boxid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="printer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenPrintLabelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OpenPrintLabelsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetResultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResult" />
+  </wsdl:message>
+  <wsdl:message name="GetResultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadTestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadTestData" />
+  </wsdl:message>
+  <wsdl:message name="ReadTestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadTestDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderInfoFromSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderInfoFromSAP" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderInfoFromSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderInfoFromSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderInfoFromOracleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderInfoFromOracle" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderInfoFromOracleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderInfoFromOracleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubAmount" />
+  </wsdl:message>
+  <wsdl:message name="GetSubAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPoQtySoapIn">
+    <wsdl:part name="parameters" element="tns:GetPoQty" />
+  </wsdl:message>
+  <wsdl:message name="GetPoQtySoapOut">
+    <wsdl:part name="parameters" element="tns:GetPoQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTestResultSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTestResult" />
+  </wsdl:message>
+  <wsdl:message name="SaveTestResultSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTestResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="SerialNoInUseSoapIn">
+    <wsdl:part name="parameters" element="tns:SerialNoInUse" />
+  </wsdl:message>
+  <wsdl:message name="SerialNoInUseSoapOut">
+    <wsdl:part name="parameters" element="tns:SerialNoInUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddlDataInUseSoapIn">
+    <wsdl:part name="parameters" element="tns:AddlDataInUse" />
+  </wsdl:message>
+  <wsdl:message name="AddlDataInUseSoapOut">
+    <wsdl:part name="parameters" element="tns:AddlDataInUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModelDefinedSoapIn">
+    <wsdl:part name="parameters" element="tns:ModelDefined" />
+  </wsdl:message>
+  <wsdl:message name="ModelDefinedSoapOut">
+    <wsdl:part name="parameters" element="tns:ModelDefinedResponse" />
+  </wsdl:message>
+  <wsdl:message name="CopyCardInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:CopyCardInfo" />
+  </wsdl:message>
+  <wsdl:message name="CopyCardInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:CopyCardInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessCardUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccessCardUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessCardUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccessCardUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadSerialNoFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadSerialNoFromDB" />
+  </wsdl:message>
+  <wsdl:message name="ReadSerialNoFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadSerialNoFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductReworkSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductRework" />
+  </wsdl:message>
+  <wsdl:message name="ProductReworkSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductReworkResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTestResultSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTestResult" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTestResultSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTestResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetModelInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetModelInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetModelInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetModelInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ErrorLoggingSoapIn">
+    <wsdl:part name="parameters" element="tns:ErrorLogging" />
+  </wsdl:message>
+  <wsdl:message name="ErrorLoggingSoapOut">
+    <wsdl:part name="parameters" element="tns:ErrorLoggingResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateIDSwopSoapIn">
+    <wsdl:part name="parameters" element="tns:updateIDSwop" />
+  </wsdl:message>
+  <wsdl:message name="updateIDSwopSoapOut">
+    <wsdl:part name="parameters" element="tns:updateIDSwopResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadProductInfoByCPNSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadProductInfoByCPN" />
+  </wsdl:message>
+  <wsdl:message name="ReadProductInfoByCPNSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadProductInfoByCPNResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadRuleFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadRuleFromDB" />
+  </wsdl:message>
+  <wsdl:message name="ReadRuleFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadRuleFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="postProdMasterSoapIn">
+    <wsdl:part name="parameters" element="tns:postProdMaster" />
+  </wsdl:message>
+  <wsdl:message name="postProdMasterSoapOut">
+    <wsdl:part name="parameters" element="tns:postProdMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelProdMasterSoapIn">
+    <wsdl:part name="parameters" element="tns:DelProdMaster" />
+  </wsdl:message>
+  <wsdl:message name="DelProdMasterSoapOut">
+    <wsdl:part name="parameters" element="tns:DelProdMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadRepairCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadRepairCode" />
+  </wsdl:message>
+  <wsdl:message name="ReadRepairCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadRepairCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTDCRepairCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTDCRepairCode" />
+  </wsdl:message>
+  <wsdl:message name="SaveTDCRepairCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTDCRepairCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadRepairDataBySerialNoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadRepairDataBySerialNo" />
+  </wsdl:message>
+  <wsdl:message name="ReadRepairDataBySerialNoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadRepairDataBySerialNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBomFromSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBomFromSAP" />
+  </wsdl:message>
+  <wsdl:message name="GetBomFromSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBomFromSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSpecifySeatItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSpecifySeatItem" />
+  </wsdl:message>
+  <wsdl:message name="GetSpecifySeatItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSpecifySeatItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveRepairDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveRepairData" />
+  </wsdl:message>
+  <wsdl:message name="SaveRepairDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveRepairDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="MatchingNoSoapIn">
+    <wsdl:part name="parameters" element="tns:MatchingNo" />
+  </wsdl:message>
+  <wsdl:message name="MatchingNoSoapOut">
+    <wsdl:part name="parameters" element="tns:MatchingNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SerialNoIsAccessCardSoapIn">
+    <wsdl:part name="parameters" element="tns:SerialNoIsAccessCard" />
+  </wsdl:message>
+  <wsdl:message name="SerialNoIsAccessCardSoapOut">
+    <wsdl:part name="parameters" element="tns:SerialNoIsAccessCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="MatchingAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:MatchingAccount" />
+  </wsdl:message>
+  <wsdl:message name="MatchingAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:MatchingAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxQtySoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxQty" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxQtySoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPalletInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPalletInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletQtySoapIn">
+    <wsdl:part name="parameters" element="tns:GetPalletQty" />
+  </wsdl:message>
+  <wsdl:message name="GetPalletQtySoapOut">
+    <wsdl:part name="parameters" element="tns:GetPalletQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="BoxExesistInPalletSoapIn">
+    <wsdl:part name="parameters" element="tns:BoxExesistInPallet" />
+  </wsdl:message>
+  <wsdl:message name="BoxExesistInPalletSoapOut">
+    <wsdl:part name="parameters" element="tns:BoxExesistInPalletResponse" />
+  </wsdl:message>
+  <wsdl:message name="BoxInOtherPalletSoapIn">
+    <wsdl:part name="parameters" element="tns:BoxInOtherPallet" />
+  </wsdl:message>
+  <wsdl:message name="BoxInOtherPalletSoapOut">
+    <wsdl:part name="parameters" element="tns:BoxInOtherPalletResponse" />
+  </wsdl:message>
+  <wsdl:message name="BoxHasOtherProdSoapIn">
+    <wsdl:part name="parameters" element="tns:BoxHasOtherProd" />
+  </wsdl:message>
+  <wsdl:message name="BoxHasOtherProdSoapOut">
+    <wsdl:part name="parameters" element="tns:BoxHasOtherProdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadSDCartonsSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadSDCartons" />
+  </wsdl:message>
+  <wsdl:message name="ReadSDCartonsSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadSDCartonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadCartonIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadCartonID" />
+  </wsdl:message>
+  <wsdl:message name="ReadCartonIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadCartonIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveCartonIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveCartonID" />
+  </wsdl:message>
+  <wsdl:message name="SaveCartonIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveCartonIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCartonIDSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveCartonID" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCartonIDSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveCartonIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShipInfoBySNSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShipInfoBySN" />
+  </wsdl:message>
+  <wsdl:message name="GetShipInfoBySNSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShipInfoBySNResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShipInfoByBoxIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShipInfoByBoxID" />
+  </wsdl:message>
+  <wsdl:message name="GetShipInfoByBoxIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShipInfoByBoxIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeBox" />
+  </wsdl:message>
+  <wsdl:message name="ChangeBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFlatFileMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFlatFileMessage" />
+  </wsdl:message>
+  <wsdl:message name="SaveFlatFileMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFlatFileMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveFlatFileSNSoapIn">
+    <wsdl:part name="parameters" element="tns:saveFlatFileSN" />
+  </wsdl:message>
+  <wsdl:message name="saveFlatFileSNSoapOut">
+    <wsdl:part name="parameters" element="tns:saveFlatFileSNResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckFlatFileSNSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckFlatFileSN" />
+  </wsdl:message>
+  <wsdl:message name="CheckFlatFileSNSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckFlatFileSNResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePalletSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePallet" />
+  </wsdl:message>
+  <wsdl:message name="ChangePalletSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePalletResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlatfileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlatfile" />
+  </wsdl:message>
+  <wsdl:message name="GetFlatfileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlatfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFlatFilePropertiesSoapIn">
+    <wsdl:part name="parameters" element="tns:getFlatFileProperties" />
+  </wsdl:message>
+  <wsdl:message name="getFlatFilePropertiesSoapOut">
+    <wsdl:part name="parameters" element="tns:getFlatFilePropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="setFlatFilePropertiesSoapIn">
+    <wsdl:part name="parameters" element="tns:setFlatFileProperties" />
+  </wsdl:message>
+  <wsdl:message name="setFlatFilePropertiesSoapOut">
+    <wsdl:part name="parameters" element="tns:setFlatFilePropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AndonInputSoapIn">
+    <wsdl:part name="parameters" element="tns:AndonInput" />
+  </wsdl:message>
+  <wsdl:message name="AndonInputSoapOut">
+    <wsdl:part name="parameters" element="tns:AndonInputResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExistsModelSoapIn">
+    <wsdl:part name="parameters" element="tns:ExistsModel" />
+  </wsdl:message>
+  <wsdl:message name="ExistsModelSoapOut">
+    <wsdl:part name="parameters" element="tns:ExistsModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="AndonActualQtySoapIn">
+    <wsdl:part name="parameters" element="tns:AndonActualQty" />
+  </wsdl:message>
+  <wsdl:message name="AndonActualQtySoapOut">
+    <wsdl:part name="parameters" element="tns:AndonActualQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="AndonActualQtyofProcessSoapIn">
+    <wsdl:part name="parameters" element="tns:AndonActualQtyofProcess" />
+  </wsdl:message>
+  <wsdl:message name="AndonActualQtyofProcessSoapOut">
+    <wsdl:part name="parameters" element="tns:AndonActualQtyofProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="AndonFailedPercentSoapIn">
+    <wsdl:part name="parameters" element="tns:AndonFailedPercent" />
+  </wsdl:message>
+  <wsdl:message name="AndonFailedPercentSoapOut">
+    <wsdl:part name="parameters" element="tns:AndonFailedPercentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AndonFailedQtySoapIn">
+    <wsdl:part name="parameters" element="tns:AndonFailedQty" />
+  </wsdl:message>
+  <wsdl:message name="AndonFailedQtySoapOut">
+    <wsdl:part name="parameters" element="tns:AndonFailedQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="AndonLineStopTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:AndonLineStopTime" />
+  </wsdl:message>
+  <wsdl:message name="AndonLineStopTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:AndonLineStopTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AndonLineStopFreqSoapIn">
+    <wsdl:part name="parameters" element="tns:AndonLineStopFreq" />
+  </wsdl:message>
+  <wsdl:message name="AndonLineStopFreqSoapOut">
+    <wsdl:part name="parameters" element="tns:AndonLineStopFreqResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAndonProdScheSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAndonProdSche" />
+  </wsdl:message>
+  <wsdl:message name="GetAndonProdScheSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAndonProdScheResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAndonProdScheSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAndonProdSche" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAndonProdScheSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAndonProdScheResponse" />
+  </wsdl:message>
+  <wsdl:message name="AndonProjectedQtySoapIn">
+    <wsdl:part name="parameters" element="tns:AndonProjectedQty" />
+  </wsdl:message>
+  <wsdl:message name="AndonProjectedQtySoapOut">
+    <wsdl:part name="parameters" element="tns:AndonProjectedQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="KillLargeReportsSoapIn">
+    <wsdl:part name="parameters" element="tns:KillLargeReports" />
+  </wsdl:message>
+  <wsdl:message name="KillLargeReportsSoapOut">
+    <wsdl:part name="parameters" element="tns:KillLargeReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimeToGMTSoapIn">
+    <wsdl:part name="parameters" element="tns:TimeToGMT" />
+  </wsdl:message>
+  <wsdl:message name="TimeToGMTSoapOut">
+    <wsdl:part name="parameters" element="tns:TimeToGMTResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintMacAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintMacAddress" />
+  </wsdl:message>
+  <wsdl:message name="PrintMacAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintMacAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReprintMacAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:ReprintMacAddress" />
+  </wsdl:message>
+  <wsdl:message name="ReprintMacAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:ReprintMacAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPreMacAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPreMacAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetPreMacAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPreMacAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLengthMacAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLengthMacAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetLengthMacAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLengthMacAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpenPrintLabelsSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenPrintLabels" />
+  </wsdl:message>
+  <wsdl:message name="OpenPrintLabelsSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenPrintLabelsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="eTraceTDCServiceSoap">
+    <wsdl:operation name="GetResult">
+      <wsdl:input message="tns:GetResultSoapIn" />
+      <wsdl:output message="tns:GetResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadTestData">
+      <wsdl:input message="tns:ReadTestDataSoapIn" />
+      <wsdl:output message="tns:ReadTestDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderInfoFromSAP">
+      <wsdl:input message="tns:GetOrderInfoFromSAPSoapIn" />
+      <wsdl:output message="tns:GetOrderInfoFromSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderInfoFromOracle">
+      <wsdl:input message="tns:GetOrderInfoFromOracleSoapIn" />
+      <wsdl:output message="tns:GetOrderInfoFromOracleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubAmount">
+      <wsdl:input message="tns:GetSubAmountSoapIn" />
+      <wsdl:output message="tns:GetSubAmountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPoQty">
+      <wsdl:input message="tns:GetPoQtySoapIn" />
+      <wsdl:output message="tns:GetPoQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTestResult">
+      <wsdl:input message="tns:SaveTestResultSoapIn" />
+      <wsdl:output message="tns:SaveTestResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SerialNoInUse">
+      <wsdl:input message="tns:SerialNoInUseSoapIn" />
+      <wsdl:output message="tns:SerialNoInUseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddlDataInUse">
+      <wsdl:input message="tns:AddlDataInUseSoapIn" />
+      <wsdl:output message="tns:AddlDataInUseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModelDefined">
+      <wsdl:input message="tns:ModelDefinedSoapIn" />
+      <wsdl:output message="tns:ModelDefinedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyCardInfo">
+      <wsdl:input message="tns:CopyCardInfoSoapIn" />
+      <wsdl:output message="tns:CopyCardInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessCardUserInfo">
+      <wsdl:input message="tns:GetAccessCardUserInfoSoapIn" />
+      <wsdl:output message="tns:GetAccessCardUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSerialNoFromDB">
+      <wsdl:input message="tns:ReadSerialNoFromDBSoapIn" />
+      <wsdl:output message="tns:ReadSerialNoFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductRework">
+      <wsdl:input message="tns:ProductReworkSoapIn" />
+      <wsdl:output message="tns:ProductReworkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTestResult">
+      <wsdl:input message="tns:DeleteTestResultSoapIn" />
+      <wsdl:output message="tns:DeleteTestResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelInfo">
+      <wsdl:input message="tns:GetModelInfoSoapIn" />
+      <wsdl:output message="tns:GetModelInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ErrorLogging">
+      <wsdl:input message="tns:ErrorLoggingSoapIn" />
+      <wsdl:output message="tns:ErrorLoggingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateIDSwop">
+      <wsdl:input message="tns:updateIDSwopSoapIn" />
+      <wsdl:output message="tns:updateIDSwopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProductInfoByCPN">
+      <wsdl:input message="tns:ReadProductInfoByCPNSoapIn" />
+      <wsdl:output message="tns:ReadProductInfoByCPNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadRuleFromDB">
+      <wsdl:input message="tns:ReadRuleFromDBSoapIn" />
+      <wsdl:output message="tns:ReadRuleFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="postProdMaster">
+      <wsdl:input message="tns:postProdMasterSoapIn" />
+      <wsdl:output message="tns:postProdMasterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelProdMaster">
+      <wsdl:input message="tns:DelProdMasterSoapIn" />
+      <wsdl:output message="tns:DelProdMasterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadRepairCode">
+      <wsdl:input message="tns:ReadRepairCodeSoapIn" />
+      <wsdl:output message="tns:ReadRepairCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTDCRepairCode">
+      <wsdl:input message="tns:SaveTDCRepairCodeSoapIn" />
+      <wsdl:output message="tns:SaveTDCRepairCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadRepairDataBySerialNo">
+      <wsdl:input message="tns:ReadRepairDataBySerialNoSoapIn" />
+      <wsdl:output message="tns:ReadRepairDataBySerialNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBomFromSAP">
+      <wsdl:input message="tns:GetBomFromSAPSoapIn" />
+      <wsdl:output message="tns:GetBomFromSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifySeatItem">
+      <wsdl:input message="tns:GetSpecifySeatItemSoapIn" />
+      <wsdl:output message="tns:GetSpecifySeatItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRepairData">
+      <wsdl:input message="tns:SaveRepairDataSoapIn" />
+      <wsdl:output message="tns:SaveRepairDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MatchingNo">
+      <wsdl:input message="tns:MatchingNoSoapIn" />
+      <wsdl:output message="tns:MatchingNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SerialNoIsAccessCard">
+      <wsdl:input message="tns:SerialNoIsAccessCardSoapIn" />
+      <wsdl:output message="tns:SerialNoIsAccessCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MatchingAccount">
+      <wsdl:input message="tns:MatchingAccountSoapIn" />
+      <wsdl:output message="tns:MatchingAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxQty">
+      <wsdl:input message="tns:GetBoxQtySoapIn" />
+      <wsdl:output message="tns:GetBoxQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxInfo">
+      <wsdl:input message="tns:GetBoxInfoSoapIn" />
+      <wsdl:output message="tns:GetBoxInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletInfo">
+      <wsdl:input message="tns:GetPalletInfoSoapIn" />
+      <wsdl:output message="tns:GetPalletInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletQty">
+      <wsdl:input message="tns:GetPalletQtySoapIn" />
+      <wsdl:output message="tns:GetPalletQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BoxExesistInPallet">
+      <wsdl:input message="tns:BoxExesistInPalletSoapIn" />
+      <wsdl:output message="tns:BoxExesistInPalletSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BoxInOtherPallet">
+      <wsdl:input message="tns:BoxInOtherPalletSoapIn" />
+      <wsdl:output message="tns:BoxInOtherPalletSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BoxHasOtherProd">
+      <wsdl:input message="tns:BoxHasOtherProdSoapIn" />
+      <wsdl:output message="tns:BoxHasOtherProdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSDCartons">
+      <wsdl:input message="tns:ReadSDCartonsSoapIn" />
+      <wsdl:output message="tns:ReadSDCartonsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadCartonID">
+      <wsdl:input message="tns:ReadCartonIDSoapIn" />
+      <wsdl:output message="tns:ReadCartonIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCartonID">
+      <wsdl:input message="tns:SaveCartonIDSoapIn" />
+      <wsdl:output message="tns:SaveCartonIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCartonID">
+      <wsdl:input message="tns:RemoveCartonIDSoapIn" />
+      <wsdl:output message="tns:RemoveCartonIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShipInfoBySN">
+      <wsdl:input message="tns:GetShipInfoBySNSoapIn" />
+      <wsdl:output message="tns:GetShipInfoBySNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShipInfoByBoxID">
+      <wsdl:input message="tns:GetShipInfoByBoxIDSoapIn" />
+      <wsdl:output message="tns:GetShipInfoByBoxIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBox">
+      <wsdl:input message="tns:ChangeBoxSoapIn" />
+      <wsdl:output message="tns:ChangeBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFlatFileMessage">
+      <wsdl:input message="tns:SaveFlatFileMessageSoapIn" />
+      <wsdl:output message="tns:SaveFlatFileMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveFlatFileSN">
+      <wsdl:input message="tns:saveFlatFileSNSoapIn" />
+      <wsdl:output message="tns:saveFlatFileSNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckFlatFileSN">
+      <wsdl:input message="tns:CheckFlatFileSNSoapIn" />
+      <wsdl:output message="tns:CheckFlatFileSNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePallet">
+      <wsdl:input message="tns:ChangePalletSoapIn" />
+      <wsdl:output message="tns:ChangePalletSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlatfile">
+      <wsdl:input message="tns:GetFlatfileSoapIn" />
+      <wsdl:output message="tns:GetFlatfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFlatFileProperties">
+      <wsdl:input message="tns:getFlatFilePropertiesSoapIn" />
+      <wsdl:output message="tns:getFlatFilePropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setFlatFileProperties">
+      <wsdl:input message="tns:setFlatFilePropertiesSoapIn" />
+      <wsdl:output message="tns:setFlatFilePropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AndonInput">
+      <wsdl:input message="tns:AndonInputSoapIn" />
+      <wsdl:output message="tns:AndonInputSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsModel">
+      <wsdl:input message="tns:ExistsModelSoapIn" />
+      <wsdl:output message="tns:ExistsModelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AndonActualQty">
+      <wsdl:input message="tns:AndonActualQtySoapIn" />
+      <wsdl:output message="tns:AndonActualQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AndonActualQtyofProcess">
+      <wsdl:input message="tns:AndonActualQtyofProcessSoapIn" />
+      <wsdl:output message="tns:AndonActualQtyofProcessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AndonFailedPercent">
+      <wsdl:input message="tns:AndonFailedPercentSoapIn" />
+      <wsdl:output message="tns:AndonFailedPercentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AndonFailedQty">
+      <wsdl:input message="tns:AndonFailedQtySoapIn" />
+      <wsdl:output message="tns:AndonFailedQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AndonLineStopTime">
+      <wsdl:input message="tns:AndonLineStopTimeSoapIn" />
+      <wsdl:output message="tns:AndonLineStopTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AndonLineStopFreq">
+      <wsdl:input message="tns:AndonLineStopFreqSoapIn" />
+      <wsdl:output message="tns:AndonLineStopFreqSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAndonProdSche">
+      <wsdl:input message="tns:GetAndonProdScheSoapIn" />
+      <wsdl:output message="tns:GetAndonProdScheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAndonProdSche">
+      <wsdl:input message="tns:UpdateAndonProdScheSoapIn" />
+      <wsdl:output message="tns:UpdateAndonProdScheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AndonProjectedQty">
+      <wsdl:input message="tns:AndonProjectedQtySoapIn" />
+      <wsdl:output message="tns:AndonProjectedQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KillLargeReports">
+      <wsdl:input message="tns:KillLargeReportsSoapIn" />
+      <wsdl:output message="tns:KillLargeReportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TimeToGMT">
+      <wsdl:input message="tns:TimeToGMTSoapIn" />
+      <wsdl:output message="tns:TimeToGMTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintMacAddress">
+      <wsdl:input message="tns:PrintMacAddressSoapIn" />
+      <wsdl:output message="tns:PrintMacAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReprintMacAddress">
+      <wsdl:input message="tns:ReprintMacAddressSoapIn" />
+      <wsdl:output message="tns:ReprintMacAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreMacAddress">
+      <wsdl:input message="tns:GetPreMacAddressSoapIn" />
+      <wsdl:output message="tns:GetPreMacAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLengthMacAddress">
+      <wsdl:input message="tns:GetLengthMacAddressSoapIn" />
+      <wsdl:output message="tns:GetLengthMacAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenPrintLabels">
+      <wsdl:input message="tns:OpenPrintLabelsSoapIn" />
+      <wsdl:output message="tns:OpenPrintLabelsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eTraceTDCServiceSoap" type="tns:eTraceTDCServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetResult">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTestData">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadTestData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderInfoFromSAP">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetOrderInfoFromSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderInfoFromOracle">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetOrderInfoFromOracle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubAmount">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetSubAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoQty">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetPoQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTestResult">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SaveTestResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SerialNoInUse">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SerialNoInUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddlDataInUse">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AddlDataInUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModelDefined">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ModelDefined" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyCardInfo">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/CopyCardInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessCardUserInfo">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetAccessCardUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSerialNoFromDB">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadSerialNoFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductRework">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ProductRework" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTestResult">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/DeleteTestResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelInfo">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetModelInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorLogging">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ErrorLogging" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateIDSwop">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/updateIDSwop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProductInfoByCPN">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadProductInfoByCPN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadRuleFromDB">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadRuleFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postProdMaster">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/postProdMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelProdMaster">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/DelProdMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadRepairCode">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadRepairCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTDCRepairCode">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SaveTDCRepairCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadRepairDataBySerialNo">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadRepairDataBySerialNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBomFromSAP">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetBomFromSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifySeatItem">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetSpecifySeatItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRepairData">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SaveRepairData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatchingNo">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/MatchingNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SerialNoIsAccessCard">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SerialNoIsAccessCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatchingAccount">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/MatchingAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxQty">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetBoxQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxInfo">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetBoxInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletInfo">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetPalletInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletQty">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetPalletQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BoxExesistInPallet">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/BoxExesistInPallet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BoxInOtherPallet">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/BoxInOtherPallet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BoxHasOtherProd">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/BoxHasOtherProd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSDCartons">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadSDCartons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCartonID">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadCartonID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCartonID">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SaveCartonID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCartonID">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/RemoveCartonID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipInfoBySN">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetShipInfoBySN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipInfoByBoxID">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetShipInfoByBoxID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBox">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ChangeBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFlatFileMessage">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SaveFlatFileMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveFlatFileSN">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/saveFlatFileSN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFlatFileSN">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/CheckFlatFileSN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePallet">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ChangePallet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlatfile">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetFlatfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlatFileProperties">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/getFlatFileProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setFlatFileProperties">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/setFlatFileProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonInput">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonInput" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsModel">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ExistsModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonActualQty">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonActualQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonActualQtyofProcess">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonActualQtyofProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonFailedPercent">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonFailedPercent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonFailedQty">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonFailedQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonLineStopTime">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonLineStopTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonLineStopFreq">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonLineStopFreq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAndonProdSche">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetAndonProdSche" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAndonProdSche">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/UpdateAndonProdSche" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonProjectedQty">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonProjectedQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KillLargeReports">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/KillLargeReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimeToGMT">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/TimeToGMT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintMacAddress">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/PrintMacAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReprintMacAddress">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReprintMacAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreMacAddress">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetPreMacAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLengthMacAddress">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetLengthMacAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenPrintLabels">
+      <soap:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/OpenPrintLabels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eTraceTDCServiceSoap12" type="tns:eTraceTDCServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetResult">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTestData">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadTestData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderInfoFromSAP">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetOrderInfoFromSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderInfoFromOracle">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetOrderInfoFromOracle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubAmount">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetSubAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoQty">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetPoQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTestResult">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SaveTestResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SerialNoInUse">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SerialNoInUse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddlDataInUse">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AddlDataInUse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModelDefined">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ModelDefined" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyCardInfo">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/CopyCardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessCardUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetAccessCardUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSerialNoFromDB">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadSerialNoFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductRework">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ProductRework" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTestResult">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/DeleteTestResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelInfo">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetModelInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorLogging">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ErrorLogging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateIDSwop">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/updateIDSwop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProductInfoByCPN">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadProductInfoByCPN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadRuleFromDB">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadRuleFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postProdMaster">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/postProdMaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelProdMaster">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/DelProdMaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadRepairCode">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadRepairCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTDCRepairCode">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SaveTDCRepairCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadRepairDataBySerialNo">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadRepairDataBySerialNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBomFromSAP">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetBomFromSAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifySeatItem">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetSpecifySeatItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRepairData">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SaveRepairData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatchingNo">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/MatchingNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SerialNoIsAccessCard">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SerialNoIsAccessCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatchingAccount">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/MatchingAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxQty">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetBoxQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxInfo">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetBoxInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletInfo">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetPalletInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPalletQty">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetPalletQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BoxExesistInPallet">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/BoxExesistInPallet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BoxInOtherPallet">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/BoxInOtherPallet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BoxHasOtherProd">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/BoxHasOtherProd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSDCartons">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadSDCartons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCartonID">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReadCartonID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCartonID">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SaveCartonID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCartonID">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/RemoveCartonID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipInfoBySN">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetShipInfoBySN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShipInfoByBoxID">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetShipInfoByBoxID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBox">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ChangeBox" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFlatFileMessage">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/SaveFlatFileMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveFlatFileSN">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/saveFlatFileSN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFlatFileSN">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/CheckFlatFileSN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePallet">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ChangePallet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlatfile">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetFlatfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlatFileProperties">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/getFlatFileProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setFlatFileProperties">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/setFlatFileProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonInput">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonInput" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsModel">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ExistsModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonActualQty">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonActualQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonActualQtyofProcess">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonActualQtyofProcess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonFailedPercent">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonFailedPercent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonFailedQty">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonFailedQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonLineStopTime">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonLineStopTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonLineStopFreq">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonLineStopFreq" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAndonProdSche">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetAndonProdSche" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAndonProdSche">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/UpdateAndonProdSche" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndonProjectedQty">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/AndonProjectedQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KillLargeReports">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/KillLargeReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimeToGMT">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/TimeToGMT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintMacAddress">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/PrintMacAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReprintMacAddress">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/ReprintMacAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreMacAddress">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetPreMacAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLengthMacAddress">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/GetLengthMacAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenPrintLabels">
+      <soap12:operation soapAction="http://tempuri.org/eTrace_TestDataCollection/eTraceTDCService/OpenPrintLabels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eTraceTDCService">
+    <wsdl:port name="eTraceTDCServiceSoap" binding="tns:eTraceTDCServiceSoap">
+      <soap:address location="http://cnapgzhosql02/eTrace_TDC/eTraceTDCService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eTraceTDCServiceSoap12" binding="tns:eTraceTDCServiceSoap12">
+      <soap12:address location="http://cnapgzhosql02/eTrace_TDC/eTraceTDCService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

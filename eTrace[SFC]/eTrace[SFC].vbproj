@@ -1,0 +1,526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{393870E2-D337-46EA-8D65-A75299B952A7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>eTrace_SFC_.My.MyApplication</StartupObject>
+    <RootNamespace>eTrace_SFC_</RootNamespace>
+    <AssemblyName>eTrace[SFC]-QA</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>863EF6CC4BC2A4851E9500E5A39D8D3C13B70F6D</ManifestCertificateThumbprint>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <ApplicationIcon>eTraceShopfloor.ico</ApplicationIcon>
+    <SignAssembly>false</SignAssembly>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\cnapgzhoetqa01\wwwroot\ClientPrograms\SFC\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://cnapgzhoetqa01/ClientPrograms/SFC/</InstallUrl>
+    <ProductName>eTrace [SFC]-QA</ProductName>
+    <PublisherName>eTrace</PublisherName>
+    <MinimumRequiredVersion>1.0.0.111</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>112</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>eTrace[SFC]-QA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>eTrace[SFC]-QA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AxInterop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Interop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmComponentReplacement.Designer.vb">
+      <DependentUpon>frmComponentReplacement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmComponentReplacement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFixtureMount.Designer.vb">
+      <DependentUpon>frmFixtureMount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFixtureMount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInitial.Designer.vb">
+      <DependentUpon>frmInitial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInitial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMatchingN.designer.vb">
+      <DependentUpon>frmMatchingN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMatchingN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModelSwop.Designer.vb">
+      <DependentUpon>frmModelSwop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmModelSwop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQCPacking.Designer.vb">
+      <DependentUpon>frmQCPacking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQCPacking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.Designer.vb">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUnlock.Designer.vb">
+      <DependentUpon>frmUnlock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUnlock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisualInspection.Designer.vb">
+      <DependentUpon>frmVisualInspection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisualInspection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangeRevision.Designer.vb">
+      <DependentUpon>frmChangeRevision.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangeRevision.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIDUpdate.Designer.vb">
+      <DependentUpon>frmIDUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmIDUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfoUpdate.Designer.vb">
+      <DependentUpon>frmInfoUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInfoUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBurnIn.Designer.vb">
+      <DependentUpon>frmBurnIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBurnIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangeBox.Designer.vb">
+      <DependentUpon>frmChangeBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangeBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePallet.Designer.vb">
+      <DependentUpon>frmChangePallet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePallet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMI.Designer.vb">
+      <DependentUpon>frmMI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOQA.Designer.vb">
+      <DependentUpon>frmOQA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOQA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRework.designer.vb">
+      <DependentUpon>frmRework.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRework.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSMT.Designer.vb">
+      <DependentUpon>frmSMT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSMT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIDRecycle.Designer.vb">
+      <DependentUpon>frmIDRecycle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmIDRecycle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIDSwop.Designer.vb">
+      <DependentUpon>frmIDSwop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmIDSwop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPacking.Designer.vb">
+      <DependentUpon>frmPacking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPacking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemplate.Designer.vb">
+      <DependentUpon>frmTemplate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemplate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMatching1.Designer.vb">
+      <DependentUpon>frmMatching1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMatching1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWIPRework.designer.vb">
+      <DependentUpon>frmWIPRework.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWIPRework.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Globals.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Web References\eTraceSMTService\Reference.vb">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmComponentReplacement.resx">
+      <DependentUpon>frmComponentReplacement.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFixtureMount.resx">
+      <DependentUpon>frmFixtureMount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInitial.resx">
+      <DependentUpon>frmInitial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMatchingN.resx">
+      <DependentUpon>frmMatchingN.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModelSwop.resx">
+      <DependentUpon>frmModelSwop.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQCPacking.resx">
+      <DependentUpon>frmQCPacking.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUnlock.resx">
+      <DependentUpon>frmUnlock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisualInspection.resx">
+      <DependentUpon>frmVisualInspection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeRevision.resx">
+      <DependentUpon>frmChangeRevision.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIDUpdate.resx">
+      <DependentUpon>frmIDUpdate.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoUpdate.resx">
+      <DependentUpon>frmInfoUpdate.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBurnIn.resx">
+      <DependentUpon>frmBurnIn.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeBox.resx">
+      <DependentUpon>frmChangeBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePallet.resx">
+      <DependentUpon>frmChangePallet.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMI.resx">
+      <DependentUpon>frmMI.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOQA.resx">
+      <DependentUpon>frmOQA.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRework.resx">
+      <DependentUpon>frmRework.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSMT.resx">
+      <DependentUpon>frmSMT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIDRecycle.resx">
+      <DependentUpon>frmIDRecycle.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIDSwop.resx">
+      <DependentUpon>frmIDSwop.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPacking.resx">
+      <DependentUpon>frmPacking.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplate.resx">
+      <DependentUpon>frmTemplate.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMatching1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMatching1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWIPRework.resx">
+      <DependentUpon>frmWIPRework.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="eTrace[SFC]_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="SignName.pfx" />
+    <None Include="Web References\eTraceSMTService\eTraceSMTService.disco" />
+    <None Include="Web References\eTraceSMTService\eTraceSMTService.wsdl" />
+    <None Include="Web References\eTraceSMTService\Feeder.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\eTraceSMTService\FeederTypestr.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\eTraceSMTService\Machine.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\eTraceSMTService\OrderInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\eTraceSMTService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="eTraceShopfloor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://cnapgzhoetds03/eTrace_SMT/eTraceSMTService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\eTraceSMTService\</RelPath>
+      <UpdateFromURL>http://cnapgzhoetds03/eTrace_SMT/eTraceSMTService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>eTrace_SFC__eTraceSMTService_eTraceSMTService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\eTraceUI\eTraceUI.vbproj">
+      <Project>{fe3d3f2d-f209-4d76-bc07-b86052468478}</Project>
+      <Name>eTraceUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eTrace[SFCFunction]\eTrace[SFCFunction].vbproj">
+      <Project>{3c4861fd-2153-4623-a53d-76fd177cdd1c}</Project>
+      <Name>eTrace[SFCFunction]</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!--To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.-->
+  <!--<Target Name="BeforeBuild">
+  </Target>-->
+  <Target Name="AfterBuild">
+    <Copy SourceFiles="$(ProjectDir)publish.htm" DestinationFiles="$(PublishDir)publish.htm" />
+    <!--<FileUpdate Files="$(PublishDir)publish.htm" IgnoreCase="true" Multiline="true" Singleline="false" Regex="{{VERSION}}" ReplacementText="Strings.Replace('$(ApplicationVersion)','*','999')" />-->
+    <FileUpdate Files="$(PublishDir)publish.htm" IgnoreCase="true" Multiline="true" Singleline="false" Regex="{{ApplicationVersion}}" ReplacementText="$(ApplicationVersion)" />
+    <FileUpdate Files="$(PublishDir)publish.htm" IgnoreCase="true" Multiline="true" Singleline="false" Regex="{{ApplicationRevision}}" ReplacementText="$(ApplicationRevision)" />
+  </Target>
+  <Import Project="..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets" Condition="Exists('..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets'))" />
+  </Target>
+</Project>

@@ -1,0 +1,688 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+eTrace[SFC]-QA
+</name>
+</assembly>
+<members>
+<member name="T:eTrace_SFC_.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:eTrace_SFC_.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:eTrace_SFC_.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="F:eTrace_SFC_.frmFixtureMount.C_MAXSIZE">
+ <summary>
+ the input in textbox "txtSize" can not be larger then _maxSize
+ </summary>
+</member>
+<member name="M:eTrace_SFC_.frmFixtureMount.SaveResult">
+ <summary>
+ update GridViewData to Webservice
+ </summary>
+</member>
+<member name="M:eTrace_SFC_.frmFixtureMount.InitDatagridview">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:eTrace_SFC_.frmFixtureMount.examData(System.String,System.String)">
+ <summary>
+ exam Process when adding to list
+ </summary>
+ <param name="PCBA"></param>
+ <param name="process"></param>
+ <returns></returns>
+</member>
+<member name="F:eTrace_SFC_.frmUnlock._lastselectIndex">
+ <summary>
+ 记录上一次选择项rowId
+ </summary>
+</member>
+<member name="F:eTrace_SFC_.frmUnlock._dtAllLocks">
+ <summary>
+ 缓存所有locks
+ </summary>
+</member>
+<member name="M:eTrace_SFC_.frmUnlock.StartLoadLocks">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:eTrace_SFC_.frmUnlock.Radio_CheckedChanged(System.Object,System.EventArgs)">
+ <summary>
+ 切换
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:eTrace_SFC_.frmUnlock.IsModifed(System.Data.DataRow)">
+ <summary>
+ jarge weather locks info have been modifed
+ </summary>
+ <returns></returns>
+</member>
+<member name="F:eTrace_SFC_.frmBurnIn.SFC016">
+ <summary>
+  Burn In - Allow WIP Out without WIP In(Yes/No)
+ </summary>
+</member>
+<member name="M:eTrace_SFC_.frmBurnIn.ShowWipIn">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:eTrace_SFC_.frmSMT.addtable">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:eTrace_SFC_.Globals.GetReportLink(System.String)">
+ <summary>
+ Get a link  link to WipStatusOneView
+ </summary>
+ <param name="intSN">int Sn</param>
+ <returns></returns>
+</member>
+<member name="P:eTrace_SFC_.Globals.Config.AllowMunualInput">
+ <summary>
+ AllowMunualInput from t_config  "ConfigID='SFC004'
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:eTrace_SFC_.Globals.Config.MinimalIntSNLength">
+ <summary>
+ Minimal length of Int Serial No t_config  "ConfigID='SFC009'
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.eTraceSMTService">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.#ctor">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ErrorLoggingCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeederInfoCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ClearFeederInfoCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ReadCLIDsCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.PostFeederSetupCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.postMachineSetupCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.postChangeFeederCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetMachineInfoCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ChangeReelinBankCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ChangeReelinTableCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.StartMachineCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ClearFeederCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetOrderInfoFromSAPCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.SaveSMTMasterCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetSpecCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetIDCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetMachineCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeederCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeederTypeCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.SaveFeederTypeCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFileListCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFileInfoCompleted">
+<remarks/>
+</member>
+<member name="E:eTrace_SFC_.eTraceSMTService.eTraceSMTService.Del_SMTMasterCompleted">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ErrorLogging(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ErrorLoggingAsync(System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ErrorLoggingAsync(System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeederInfo(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeederInfoAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeederInfoAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ClearFeederInfo(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ClearFeederInfoAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ClearFeederInfoAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ReadCLIDs(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ReadCLIDsAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ReadCLIDsAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.PostFeederSetup(System.Data.DataSet,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.PostFeederSetupAsync(System.Data.DataSet,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.PostFeederSetupAsync(System.Data.DataSet,eTrace_SFC_.eTraceSMTService.SAPLogin,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.postMachineSetup(System.Data.DataSet,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.postMachineSetupAsync(System.Data.DataSet,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.postMachineSetupAsync(System.Data.DataSet,eTrace_SFC_.eTraceSMTService.SAPLogin,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.postChangeFeeder(System.Data.DataSet,System.String,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.postChangeFeederAsync(System.Data.DataSet,System.String,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.postChangeFeederAsync(System.Data.DataSet,System.String,eTrace_SFC_.eTraceSMTService.SAPLogin,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetMachineInfo(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetMachineInfoAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetMachineInfoAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ChangeReelinBank(System.String,System.String,System.String,System.Double,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ChangeReelinBankAsync(System.String,System.String,System.String,System.Double,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ChangeReelinBankAsync(System.String,System.String,System.String,System.Double,eTrace_SFC_.eTraceSMTService.SAPLogin,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ChangeReelinTable(System.String,System.String,System.String,System.String,System.Double,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ChangeReelinTableAsync(System.String,System.String,System.String,System.String,System.Double,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ChangeReelinTableAsync(System.String,System.String,System.String,System.String,System.Double,eTrace_SFC_.eTraceSMTService.SAPLogin,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.StartMachine(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.StartMachineAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.StartMachineAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ClearFeeder(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ClearFeederAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.ClearFeederAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetOrderInfoFromSAP(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetOrderInfoFromSAPAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetOrderInfoFromSAPAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.SaveSMTMaster(eTrace_SFC_.eTraceSMTService.Machine,eTrace_SFC_.eTraceSMTService.Feeder,eTrace_SFC_.eTraceSMTService.FeederTypestr,System.String,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.SaveSMTMasterAsync(eTrace_SFC_.eTraceSMTService.Machine,eTrace_SFC_.eTraceSMTService.Feeder,eTrace_SFC_.eTraceSMTService.FeederTypestr,System.String,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.SaveSMTMasterAsync(eTrace_SFC_.eTraceSMTService.Machine,eTrace_SFC_.eTraceSMTService.Feeder,eTrace_SFC_.eTraceSMTService.FeederTypestr,System.String,eTrace_SFC_.eTraceSMTService.SAPLogin,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetSpec(System.Int32,System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetSpecAsync(System.Int32,System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetSpecAsync(System.Int32,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetID">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetIDAsync">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetIDAsync(System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetMachine(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetMachineAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetMachineAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeeder(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeederAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeederAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeederType(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeederTypeAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFeederTypeAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.SaveFeederType(System.Data.DataSet,eTrace_SFC_.eTraceSMTService.Machine,eTrace_SFC_.eTraceSMTService.Feeder,eTrace_SFC_.eTraceSMTService.FeederTypestr,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.SaveFeederTypeAsync(System.Data.DataSet,eTrace_SFC_.eTraceSMTService.Machine,eTrace_SFC_.eTraceSMTService.Feeder,eTrace_SFC_.eTraceSMTService.FeederTypestr,eTrace_SFC_.eTraceSMTService.SAPLogin)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.SaveFeederTypeAsync(System.Data.DataSet,eTrace_SFC_.eTraceSMTService.Machine,eTrace_SFC_.eTraceSMTService.Feeder,eTrace_SFC_.eTraceSMTService.FeederTypestr,eTrace_SFC_.eTraceSMTService.SAPLogin,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFileList">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFileListAsync">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFileListAsync(System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFileInfo(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFileInfoAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.GetFileInfoAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.Del_SMTMaster(System.String,System.Int32)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.Del_SMTMasterAsync(System.String,System.Int32)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.Del_SMTMasterAsync(System.String,System.Int32,System.Object)">
+<remarks/>
+</member>
+<member name="M:eTrace_SFC_.eTraceSMTService.eTraceSMTService.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.SAPLogin">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.SAPLogin.Server">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.SAPLogin.User">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.SAPLogin.PWD">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.FeederTypestr">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.FeederTypestr.FeederType">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.FeederTypestr.Description">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.Feeder">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Feeder.FeederID">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Feeder.FeederSpec">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Feeder.MaxLanes">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Feeder.ProductionLine">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Feeder.Remarks">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.Machine">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Machine.MachineID">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Machine.Manufacturer">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Machine.Model">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Machine.MultipleBanks">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Machine.DaulTables">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Machine.ProductionLine">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Machine.Remarks">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.OrderInfo">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.OrderInfo.MatlNo">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.OrderInfo.MatlDesc">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.OrderInfo.OrderQty">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.OrderInfo.OpenQty">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.OrderInfo.StartDate">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.OrderInfo.ErrorMsg">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ErrorLoggingCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ErrorLoggingCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.ErrorLoggingCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetFeederInfoCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetFeederInfoCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.GetFeederInfoCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ClearFeederInfoCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ClearFeederInfoCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.ClearFeederInfoCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ReadCLIDsCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ReadCLIDsCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.ReadCLIDsCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.PostFeederSetupCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.PostFeederSetupCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.PostFeederSetupCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.postMachineSetupCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.postMachineSetupCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.postMachineSetupCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.postChangeFeederCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.postChangeFeederCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.postChangeFeederCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetMachineInfoCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetMachineInfoCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.GetMachineInfoCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ChangeReelinBankCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ChangeReelinBankCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.ChangeReelinBankCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ChangeReelinTableCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ChangeReelinTableCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.ChangeReelinTableCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.StartMachineCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.StartMachineCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.StartMachineCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ClearFeederCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.ClearFeederCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.ClearFeederCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetOrderInfoFromSAPCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetOrderInfoFromSAPCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.GetOrderInfoFromSAPCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.SaveSMTMasterCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.SaveSMTMasterCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.SaveSMTMasterCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetSpecCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetSpecCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.GetSpecCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetIDCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetIDCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.GetIDCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetMachineCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetMachineCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.GetMachineCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetFeederCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetFeederCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.GetFeederCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetFeederTypeCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetFeederTypeCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.GetFeederTypeCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.SaveFeederTypeCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.SaveFeederTypeCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.SaveFeederTypeCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetFileListCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetFileListCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.GetFileListCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetFileInfoCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.GetFileInfoCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.GetFileInfoCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.Del_SMTMasterCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:eTrace_SFC_.eTraceSMTService.Del_SMTMasterCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:eTrace_SFC_.eTraceSMTService.Del_SMTMasterCompletedEventArgs.Result">
+<remarks/>
+</member>
+</members>
+</doc>

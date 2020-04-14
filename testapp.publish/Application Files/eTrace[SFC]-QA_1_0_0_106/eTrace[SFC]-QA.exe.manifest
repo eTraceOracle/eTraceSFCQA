@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="eTrace[SFC]-QA.exe" version="1.0.0.106" publicKeyToken="39ebb40d806f9702" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="eTraceShopfloor.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="eTrace[SFC]-QA" version="1.0.0.104" language="neutral" processorArchitecture="msil" />
+    <commandLine file="eTrace[SFC]-QA.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+            If you want to change the Windows User Account Control level replace the 
+            requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel node will disable file and registry virtualization.
+            If you want to utilize File and Registry Virtualization for backward 
+            compatibility then delete the requestedExecutionLevel node.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AxInterop.AcroPDFLib.dll" size="8704">
+      <assemblyIdentity name="AxInterop.AcroPDFLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>hyKgM8K1e61m73L60EdbNvDmKWx7fOifYbQH2D1Wbe4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="eTrace[SFC]-QA.exe" size="661424">
+      <assemblyIdentity name="eTrace[SFC]-QA" version="1.0.0.104" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nM7bbP2DZ5FMDCI7QZgjOaFGBzBNMAZb4ImOMrTgjqE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="eTrace[SFC]-QA.XmlSerializers.dll" size="93696">
+      <assemblyIdentity name="eTrace[SFC]-QA.XmlSerializers" version="1.0.0.104" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>+M0dJWJflUpZPghcxYK842qj+QjiHvUuA7+OT0QgSJo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="eTrace[SFCFunction].dll" size="1917440">
+      <assemblyIdentity name="eTrace[SFCFunction]" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>3icYEa/6X71Jr5ILZpsT6BAmx/FVGbDiOIqnG1Mm1KQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="eTrace[SFCFunction].XmlSerializers.dll" size="3816960">
+      <assemblyIdentity name="eTrace[SFCFunction].XmlSerializers" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>mejcJjOzEwx7lrE7He62+813Py10jF6Ux5Yy7O6U6JQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="eTraceUI.dll" size="4236800">
+      <assemblyIdentity name="eTraceUI" version="1.0.1.6" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>fmU1GdLjkwfGxRDkuLHH0xA6Q1ifNGQzDAtww4vt7Q8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="af\eTraceUI.resources.dll" size="6144">
+      <assemblyIdentity name="eTraceUI.resources" version="1.0.1.6" language="af" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>XbKBsqp4EseOTOyOoZ40CBoHaLYklu/4COpmEVkuuKM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="eTraceUI.XmlSerializers.dll" size="2932224">
+      <assemblyIdentity name="eTraceUI.XmlSerializers" version="1.0.1.6" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>NcqmkGCys5Jof9iZSiZDdFvCJSW8IMfOs2NCJvkk0BQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.AcroPDFLib.dll" size="10240">
+      <assemblyIdentity name="Interop.AcroPDFLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>MN8p9T+4jH+F8ur2qApz+SRlv1dcfTvbbz7X7ZnUmRw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="eTrace[SFC]-QA.exe.config" size="3089">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ClI20lRriPgxK5YjTEINfWice4oyGBnHD9ZGaRbSNmY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="eTraceShopfloor.ico" size="3262">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wsguJ6YUumD4q8dtTkU70hTDDONJkzmo7abbP1JMt54=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of all Windows versions that this application is designed to work with. 
+      Windows will automatically select the most compatible environment.-->
+      <!-- If your application is designed to work with Windows Vista, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+      <!-- If your application is designed to work with Windows 7, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+      <!-- If your application is designed to work with Windows 8, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+      <!-- If your application is designed to work with Windows 8.1, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=Emerson/GAS" issuerKeyHash="ad441bdb4f8bbd8a1c54287a5c493c313a87f6f4" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>fSJqE81DSU/xYJW86kodQNXsQ+M=</DigestValue></Reference></SignedInfo><SignatureValue>evHSX+o5XoQYwwPtu5E+3ODmKMBzN97Zjk2RgJhPTrb15uOwWGjgx6VXTKk1i7o9uNGBCvsgJv1jSND4Bif1XVMMSOWpWOMGC0j5Sthdo31nK40AcbM/0G7CszjzuKC5Irhc4vrnfjqG7G4hzBzYNVVXhCL8UtndJjdJbxdKMyI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wUy1Y90QLT4JvIgixLe9DTeIogeSt57oaO8gk+YRRbDxWzAai47E7tWDpd/4/2sRH8Ns1OEFxYwEzt4FIcaMp9Wb3bp4FUr94AY7mvuXrm3Cl904cspdFASV04qttGHERS3AILBEEOqS7P7hTqsjB4Ik5tn/aAwdOflqMxjAmfs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="e343ecd5401d4aeabc9560f14f4943cd136a227d" Description="" Url=""><as:assemblyIdentity name="eTrace[SFC]-QA.exe" version="1.0.0.106" publicKeyToken="39ebb40d806f9702" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Emerson/GAS</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>fX1DTOrnhXcXSNnUjYaBPENL4hM=</DigestValue></Reference></SignedInfo><SignatureValue>GOVx0vL7eYzxxIpFSjl4eaJsfRCrhsO8nBxOoqw1YoaUMISZjssC2J5lR6+9tyny5tpjerdajBtqGFRI4RCBiv3hZgErMo4Ca3glm5HaCyHQk9lGZ4rXIC6TLNHEtzCXuIoy0/HeqSPKqlN0AObiZhfW4KoigRTwrNw15H5L2W4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wUy1Y90QLT4JvIgixLe9DTeIogeSt57oaO8gk+YRRbDxWzAai47E7tWDpd/4/2sRH8Ns1OEFxYwEzt4FIcaMp9Wb3bp4FUr94AY7mvuXrm3Cl904cspdFASV04qttGHERS3AILBEEOqS7P7hTqsjB4Ik5tn/aAwdOflqMxjAmfs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB/jCCAWegAwIBAgIQF9NG+pV/YpJCvcpirtKASTANBgkqhkiG9w0BAQQFADAWMRQwEgYDVQQDEwtFbWVyc29uL0dBUzAgFw0wOTEyMzExNjAwMDBaGA8yOTk4MTIzMTE2MDAwMFowFjEUMBIGA1UEAxMLRW1lcnNvbi9HQVMwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFMtWPdEC0+CbyIIsS3vQ03iKIHkree6GjvIJPmEUWw8VswGouOxO7Vg6Xf+P9rER/DbNThBcWMBM7eBSHGjKfVm926eBVK/eAGO5r7l65twpfdOHLKXRQEldOKrbRhxEUtwCCwRBDqkuz+4U6rIweCJObZ/2gMHTn5ajMYwJn7AgMBAAGjSzBJMEcGA1UdAQRAMD6AED5BDyKrZ23KJjcGyo5qBDOhGDAWMRQwEgYDVQQDEwtFbWVyc29uL0dBU4IQF9NG+pV/YpJCvcpirtKASTANBgkqhkiG9w0BAQQFAAOBgQCzulD8r/s/WMrD/yskgjLCdortYP85QuAOmE3WP9gLerx0cLYWjU/18FbXjdfHcqT20KoDqy9U2Rlk9qLHK8DNZol2jQWG/vJXbdOI6O14I/LzZCmvRj07qJ3n4zyykimMg0CrLy52hBhmz9hlW6qMJgPB0YkpAgmAZl2loEdpZw==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

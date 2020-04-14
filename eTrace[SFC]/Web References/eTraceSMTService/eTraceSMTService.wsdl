@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/eTrace_SMT/eTraceSMTService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/eTrace_SMT/eTraceSMTService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/eTrace_SMT/eTraceSMTService">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="ErrorLogging">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModuleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ErrorLoggingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ErrorLoggingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFeederInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FeederID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFeederInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFeederInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearFeederInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FeederID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearFeederInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClearFeederInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadCLIDs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CLID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SourceSType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadCLIDsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadCLIDsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostFeederSetup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsFeederSetup">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLogin" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SAPLogin">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Server" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostFeederSetupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PostFeederSetupResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postMachineSetup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsMachineSetup">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLogin" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postMachineSetupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="postMachineSetupResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postChangeFeeder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsMachineSetup">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="NewFeederID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLogin" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postChangeFeederResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="postChangeFeederResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMachineInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MachineID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMachineInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMachineInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeReelinBank">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SMTSetupID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OldCLID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewCLID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Qty" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLogin" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeReelinBankResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeReelinBankResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeReelinTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SMTSetupID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FeederID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lane" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewCLID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Qty" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLogin" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeReelinTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeReelinTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartMachine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SMTSetupID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartMachineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StartMachineResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearFeeder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SMTSetupID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearFeederResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClearFeederResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderInfoFromSAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderInfoFromSAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOrderInfoFromSAPResult" type="tns:OrderInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OrderInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MatlNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MatlDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderQty" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="OpenQty" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveSMTMaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="machinStr" type="tns:Machine" />
+            <s:element minOccurs="1" maxOccurs="1" name="feederStr" type="tns:Feeder" />
+            <s:element minOccurs="1" maxOccurs="1" name="feedertypeStr" type="tns:FeederTypestr" />
+            <s:element minOccurs="0" maxOccurs="1" name="flag" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLoginData" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Machine">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MachineID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Manufacturer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MultipleBanks" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DaulTables" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductionLine" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Feeder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FeederID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FeederSpec" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxLanes" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductionLine" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FeederTypestr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FeederType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveSMTMasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveSMTMasterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="flag" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="search" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSpecResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetID">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMachine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="search" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMachineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMachineResult" type="tns:Machine" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFeeder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="search" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFeederResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFeederResult" type="tns:Feeder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFeederType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="search" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFeederTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFeederTypeResult" type="tns:FeederTypestr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFeederType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mydataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="machinStr" type="tns:Machine" />
+            <s:element minOccurs="1" maxOccurs="1" name="feederStr" type="tns:Feeder" />
+            <s:element minOccurs="1" maxOccurs="1" name="feedertypeStr" type="tns:FeederTypestr" />
+            <s:element minOccurs="1" maxOccurs="1" name="SAPLoginData" type="tns:SAPLogin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFeederTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveFeederTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFileListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetupFile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Del_SMTMaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flag" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Del_SMTMasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Del_SMTMasterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ErrorLoggingSoapIn">
+    <wsdl:part name="parameters" element="tns:ErrorLogging" />
+  </wsdl:message>
+  <wsdl:message name="ErrorLoggingSoapOut">
+    <wsdl:part name="parameters" element="tns:ErrorLoggingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFeederInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFeederInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFeederInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFeederInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearFeederInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearFeederInfo" />
+  </wsdl:message>
+  <wsdl:message name="ClearFeederInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearFeederInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadCLIDsSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadCLIDs" />
+  </wsdl:message>
+  <wsdl:message name="ReadCLIDsSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadCLIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostFeederSetupSoapIn">
+    <wsdl:part name="parameters" element="tns:PostFeederSetup" />
+  </wsdl:message>
+  <wsdl:message name="PostFeederSetupSoapOut">
+    <wsdl:part name="parameters" element="tns:PostFeederSetupResponse" />
+  </wsdl:message>
+  <wsdl:message name="postMachineSetupSoapIn">
+    <wsdl:part name="parameters" element="tns:postMachineSetup" />
+  </wsdl:message>
+  <wsdl:message name="postMachineSetupSoapOut">
+    <wsdl:part name="parameters" element="tns:postMachineSetupResponse" />
+  </wsdl:message>
+  <wsdl:message name="postChangeFeederSoapIn">
+    <wsdl:part name="parameters" element="tns:postChangeFeeder" />
+  </wsdl:message>
+  <wsdl:message name="postChangeFeederSoapOut">
+    <wsdl:part name="parameters" element="tns:postChangeFeederResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMachineInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMachineInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetMachineInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMachineInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeReelinBankSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeReelinBank" />
+  </wsdl:message>
+  <wsdl:message name="ChangeReelinBankSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeReelinBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeReelinTableSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeReelinTable" />
+  </wsdl:message>
+  <wsdl:message name="ChangeReelinTableSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeReelinTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartMachineSoapIn">
+    <wsdl:part name="parameters" element="tns:StartMachine" />
+  </wsdl:message>
+  <wsdl:message name="StartMachineSoapOut">
+    <wsdl:part name="parameters" element="tns:StartMachineResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearFeederSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearFeeder" />
+  </wsdl:message>
+  <wsdl:message name="ClearFeederSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearFeederResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderInfoFromSAPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderInfoFromSAP" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderInfoFromSAPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderInfoFromSAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveSMTMasterSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveSMTMaster" />
+  </wsdl:message>
+  <wsdl:message name="SaveSMTMasterSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveSMTMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSpecSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSpec" />
+  </wsdl:message>
+  <wsdl:message name="GetSpecSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSpecResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetID" />
+  </wsdl:message>
+  <wsdl:message name="GetIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMachineSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMachine" />
+  </wsdl:message>
+  <wsdl:message name="GetMachineSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMachineResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFeederSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFeeder" />
+  </wsdl:message>
+  <wsdl:message name="GetFeederSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFeederResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFeederTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFeederType" />
+  </wsdl:message>
+  <wsdl:message name="GetFeederTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFeederTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFeederTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFeederType" />
+  </wsdl:message>
+  <wsdl:message name="SaveFeederTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFeederTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileList" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFileInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Del_SMTMasterSoapIn">
+    <wsdl:part name="parameters" element="tns:Del_SMTMaster" />
+  </wsdl:message>
+  <wsdl:message name="Del_SMTMasterSoapOut">
+    <wsdl:part name="parameters" element="tns:Del_SMTMasterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="eTraceSMTServiceSoap">
+    <wsdl:operation name="ErrorLogging">
+      <wsdl:input message="tns:ErrorLoggingSoapIn" />
+      <wsdl:output message="tns:ErrorLoggingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeederInfo">
+      <wsdl:input message="tns:GetFeederInfoSoapIn" />
+      <wsdl:output message="tns:GetFeederInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearFeederInfo">
+      <wsdl:input message="tns:ClearFeederInfoSoapIn" />
+      <wsdl:output message="tns:ClearFeederInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadCLIDs">
+      <wsdl:input message="tns:ReadCLIDsSoapIn" />
+      <wsdl:output message="tns:ReadCLIDsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostFeederSetup">
+      <wsdl:input message="tns:PostFeederSetupSoapIn" />
+      <wsdl:output message="tns:PostFeederSetupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="postMachineSetup">
+      <wsdl:input message="tns:postMachineSetupSoapIn" />
+      <wsdl:output message="tns:postMachineSetupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="postChangeFeeder">
+      <wsdl:input message="tns:postChangeFeederSoapIn" />
+      <wsdl:output message="tns:postChangeFeederSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineInfo">
+      <wsdl:input message="tns:GetMachineInfoSoapIn" />
+      <wsdl:output message="tns:GetMachineInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeReelinBank">
+      <wsdl:input message="tns:ChangeReelinBankSoapIn" />
+      <wsdl:output message="tns:ChangeReelinBankSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeReelinTable">
+      <wsdl:input message="tns:ChangeReelinTableSoapIn" />
+      <wsdl:output message="tns:ChangeReelinTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartMachine">
+      <wsdl:input message="tns:StartMachineSoapIn" />
+      <wsdl:output message="tns:StartMachineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearFeeder">
+      <wsdl:input message="tns:ClearFeederSoapIn" />
+      <wsdl:output message="tns:ClearFeederSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderInfoFromSAP">
+      <wsdl:input message="tns:GetOrderInfoFromSAPSoapIn" />
+      <wsdl:output message="tns:GetOrderInfoFromSAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSMTMaster">
+      <wsdl:input message="tns:SaveSMTMasterSoapIn" />
+      <wsdl:output message="tns:SaveSMTMasterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpec">
+      <wsdl:input message="tns:GetSpecSoapIn" />
+      <wsdl:output message="tns:GetSpecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetID">
+      <wsdl:input message="tns:GetIDSoapIn" />
+      <wsdl:output message="tns:GetIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMachine">
+      <wsdl:input message="tns:GetMachineSoapIn" />
+      <wsdl:output message="tns:GetMachineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeeder">
+      <wsdl:input message="tns:GetFeederSoapIn" />
+      <wsdl:output message="tns:GetFeederSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeederType">
+      <wsdl:input message="tns:GetFeederTypeSoapIn" />
+      <wsdl:output message="tns:GetFeederTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFeederType">
+      <wsdl:input message="tns:SaveFeederTypeSoapIn" />
+      <wsdl:output message="tns:SaveFeederTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileList">
+      <wsdl:input message="tns:GetFileListSoapIn" />
+      <wsdl:output message="tns:GetFileListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInfo">
+      <wsdl:input message="tns:GetFileInfoSoapIn" />
+      <wsdl:output message="tns:GetFileInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Del_SMTMaster">
+      <wsdl:input message="tns:Del_SMTMasterSoapIn" />
+      <wsdl:output message="tns:Del_SMTMasterSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eTraceSMTServiceSoap" type="tns:eTraceSMTServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ErrorLogging">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/ErrorLogging" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeederInfo">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/GetFeederInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearFeederInfo">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/ClearFeederInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCLIDs">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/ReadCLIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostFeederSetup">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/PostFeederSetup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postMachineSetup">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/postMachineSetup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postChangeFeeder">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/postChangeFeeder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineInfo">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/GetMachineInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeReelinBank">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/ChangeReelinBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeReelinTable">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/ChangeReelinTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartMachine">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/StartMachine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearFeeder">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/ClearFeeder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderInfoFromSAP">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/GetOrderInfoFromSAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSMTMaster">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/SaveSMTMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpec">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/GetSpec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetID">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/GetID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachine">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/GetMachine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeeder">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/GetFeeder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeederType">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/GetFeederType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFeederType">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/SaveFeederType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileList">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/GetFileList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInfo">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/GetFileInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Del_SMTMaster">
+      <soap:operation soapAction="http://tempuri.org/eTrace_SMT/eTraceSMTService/Del_SMTMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eTraceSMTService">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <wsdl:port name="eTraceSMTServiceSoap" binding="tns:eTraceSMTServiceSoap">
+      <soap:address location="http://cnapgzhoetds03/eTrace_SMT/eTraceSMTService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
