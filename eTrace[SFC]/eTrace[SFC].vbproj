@@ -508,15 +508,18 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!--To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.-->
-  <Target Name="BeforeBuild">
+  <!--<Target Name="BeforeBuild">
     <SignFile
             CertificateThumbprint="$(ManifestCertificateThumbprint)"
-            SigningTarget="@(ApplicationManifest)"
+            SigningTarget="$(ApplicationManifest)"
+            TargetFrameworkVersion="v4.5" />
+  </Target>-->
+  <Target Name="publish">
+    <SignFile
+            CertificateThumbprint="$(ManifestCertificateThumbprint)"
+            SigningTarget="$(ApplicationManifest)"
             TargetFrameworkVersion="v4.5" />
   </Target>
-  <!--<Target Name="JenkinsPublish">
-    
-  </Target>-->
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(ProjectDir)publish.htm" DestinationFiles="$(PublishDir)publish.htm" />
     <!--<FileUpdate Files="$(PublishDir)publish.htm" IgnoreCase="true" Multiline="true" Singleline="false" Regex="{{VERSION}}" ReplacementText="Strings.Replace('$(ApplicationVersion)','*','999')" />-->
