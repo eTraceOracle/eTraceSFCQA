@@ -16,7 +16,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <ManifestCertificateThumbprint>863EF6CC4BC2A4851E9500E5A39D8D3C13B70F6D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>8A83CA010449DD9B64DA69E9A5DAE41A54059CD9</ManifestCertificateThumbprint>
     <ManifestKeyFile>SignName.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
