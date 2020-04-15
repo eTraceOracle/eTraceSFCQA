@@ -17,8 +17,7 @@
     <SccProvider>SAK</SccProvider>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <ManifestCertificateThumbprint>863EF6CC4BC2A4851E9500E5A39D8D3C13B70F6D</ManifestCertificateThumbprint>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>SignName.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
     <ApplicationIcon>eTraceShopfloor.ico</ApplicationIcon>
@@ -30,6 +29,8 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>\\cnapgzhoetqa01\wwwroot\ClientPrograms\SFC\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -43,16 +44,14 @@
     <InstallUrl>http://cnapgzhoetqa01/ClientPrograms/SFC/</InstallUrl>
     <ProductName>eTrace [SFC]-QA</ProductName>
     <PublisherName>eTrace</PublisherName>
-    <MinimumRequiredVersion>1.0.0.111</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.117</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>112</ApplicationRevision>
+    <ApplicationRevision>118</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -514,9 +513,9 @@
             SigningTarget="$(ApplicationManifest)"
             TargetFrameworkVersion="v4.5" />
   </Target>-->
-  <Target Name="publish">
-    <SignFile CertificateThumbprint="‎86 3e f6 cc 4b c2 a4 85 1e 95 00 e5 a3 9d 8d 3c 13 b7 0f 6d" SigningTarget="$(ApplicationManifest)" TargetFrameworkVersion="v4.5" />
-  </Target>
+  <!--<Target Name="publish">
+    <SignFile CertificateThumbprint="$(ManifestCertificateThumbprint)" SigningTarget="$(ApplicationManifest)" TargetFrameworkVersion="v4.5" />
+  </Target>-->
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(ProjectDir)publish.htm" DestinationFiles="$(PublishDir)publish.htm" />
     <!--<FileUpdate Files="$(PublishDir)publish.htm" IgnoreCase="true" Multiline="true" Singleline="false" Regex="{{VERSION}}" ReplacementText="Strings.Replace('$(ApplicationVersion)','*','999')" />-->
