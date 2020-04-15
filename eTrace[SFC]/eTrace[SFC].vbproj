@@ -515,7 +515,7 @@
             TargetFrameworkVersion="v4.5" />
   </Target>-->
   <Target Name="publish">
-    <SignFile CertificateThumbprint="863EF6CC4BC2A4851E9500E5A39D8D3C13B70F6D" SigningTarget="$(ApplicationManifest)" TargetFrameworkVersion="v4.5" />
+    <SignFile CertificateThumbprint="‎86 3e f6 cc 4b c2 a4 85 1e 95 00 e5 a3 9d 8d 3c 13 b7 0f 6d" SigningTarget="$(ApplicationManifest)" TargetFrameworkVersion="v4.5" />
   </Target>
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(ProjectDir)publish.htm" DestinationFiles="$(PublishDir)publish.htm" />
