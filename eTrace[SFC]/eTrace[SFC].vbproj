@@ -44,10 +44,10 @@
     <InstallUrl>http://cnapgzhoetqa01/ClientPrograms/SFC/</InstallUrl>
     <ProductName>eTrace [SFC]-QA</ProductName>
     <PublisherName>eTrace</PublisherName>
-    <MinimumRequiredVersion>1.0.0.118</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.119</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>118</ApplicationRevision>
+    <ApplicationRevision>119</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
